@@ -181,7 +181,7 @@ void exception_handler(struct trapframe *tf)
         cprintf("Exception type:Illegal instruction\n");
         cprintf("Illegal instruction caught at 0x%016llx\n", tf->epc);
         //更新 tf->epc寄存器
-        tf->epc=tf->epc+2;
+        tf->epc=tf->epc+4;
         break;
     case CAUSE_BREAKPOINT:
         // 断点异常处理

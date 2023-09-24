@@ -42,7 +42,7 @@ void clock_init(void) {
 
     // initialize time counter 'ticks' to zero
     ticks = 0;
-
+    
     cprintf("++ setup timer interrupts\n");
 }
 
