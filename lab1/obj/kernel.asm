@@ -214,7 +214,7 @@ void clock_init(void) {
     __asm__ __volatile__("rdtime %0" : "=r"(n));
     8020013c:	c0102573          	rdtime	a0
     ticks = 0;
-
+    
     cprintf("++ setup timer interrupts\n");
 }
 
@@ -660,12 +660,12 @@ void exception_handler(struct trapframe *tf)
     802004d4:	00000517          	auipc	a0,0x0
     802004d8:	70c50513          	addi	a0,a0,1804 # 80200be0 <etext+0x176>
     802004dc:	b91ff0ef          	jal	ra,8020006c <cprintf>
-        tf->epc=tf->epc+2;
+        tf->epc=tf->epc+4;
     802004e0:	10843783          	ld	a5,264(s0)
 }
     802004e4:	60a2                	ld	ra,8(sp)
-        tf->epc=tf->epc+2;
-    802004e6:	0789                	addi	a5,a5,2
+        tf->epc=tf->epc+4;
+    802004e6:	0791                	addi	a5,a5,4
     802004e8:	10f43423          	sd	a5,264(s0)
 }
     802004ec:	6402                	ld	s0,0(sp)
