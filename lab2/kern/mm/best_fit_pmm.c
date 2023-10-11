@@ -132,17 +132,11 @@ best_fit_alloc_pages(size_t n)
     while ((le = list_next(le)) != &free_list)
     {
         struct Page *p = le2page(le, page_link);
-        // if (p->property >= n)
-        // {
-        //     page = p;
-        //     break;
-        // }
         if (p->property >= n)
         {
             if (page == NULL || p->property < page->property)
             {
                 page = p;
-                break;
             }
         }
     }
