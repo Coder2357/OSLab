@@ -8524,7 +8524,7 @@ ffffffffc020450a:	853e                	mv	a0,a5
 ffffffffc020450c:	00080663          	beqz	a6,ffffffffc0204518 <do_fork+0x174>
 ffffffffc0204510:	00007797          	auipc	a5,0x7
 ffffffffc0204514:	b4c7a623          	sw	a2,-1204(a5) # ffffffffc020b05c <next_safe.1574>
-        proc->pid = get_pid();
+    proc->pid = get_pid();
 ffffffffc0204518:	c048                	sw	a0,4(s0)
     list_add(hash_list + pid_hashfn(proc->pid), &(proc->hash_link));
 ffffffffc020451a:	45a9                	li	a1,10
@@ -8539,20 +8539,20 @@ ffffffffc020452e:	953e                	add	a0,a0,a5
 ffffffffc0204530:	6510                	ld	a2,8(a0)
 ffffffffc0204532:	0d840793          	addi	a5,s0,216
 ffffffffc0204536:	6494                	ld	a3,8(s1)
-        nr_process++;
+    nr_process++;
 ffffffffc0204538:	00092703          	lw	a4,0(s2)
     prev->next = next->prev = elm;
 ffffffffc020453c:	e21c                	sd	a5,0(a2)
 ffffffffc020453e:	e51c                	sd	a5,8(a0)
     elm->next = next;
 ffffffffc0204540:	f070                	sd	a2,224(s0)
-        list_add(&proc_list, &(proc->list_link));
+    list_add(&proc_list, &(proc->list_link));
 ffffffffc0204542:	0c840793          	addi	a5,s0,200
     elm->prev = prev;
 ffffffffc0204546:	ec68                	sd	a0,216(s0)
     prev->next = next->prev = elm;
 ffffffffc0204548:	e29c                	sd	a5,0(a3)
-        nr_process++;
+    nr_process++;
 ffffffffc020454a:	2705                	addiw	a4,a4,1
 ffffffffc020454c:	00012617          	auipc	a2,0x12
 ffffffffc0204550:	0af63223          	sd	a5,164(a2) # ffffffffc02165f0 <proc_list+0x8>
@@ -8646,7 +8646,7 @@ ffffffffc02045f6:	00002697          	auipc	a3,0x2
 ffffffffc02045fa:	64268693          	addi	a3,a3,1602 # ffffffffc0206c38 <default_pmm_manager+0x1018>
 ffffffffc02045fe:	00001617          	auipc	a2,0x1
 ffffffffc0204602:	28a60613          	addi	a2,a2,650 # ffffffffc0205888 <commands+0x870>
-ffffffffc0204606:	11d00593          	li	a1,285
+ffffffffc0204606:	11a00593          	li	a1,282
 ffffffffc020460a:	00002517          	auipc	a0,0x2
 ffffffffc020460e:	64650513          	addi	a0,a0,1606 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 ffffffffc0204612:	e3ffb0ef          	jal	ra,ffffffffc0200450 <__panic>
@@ -8709,7 +8709,7 @@ ffffffffc020467e:	1141                	addi	sp,sp,-16
     panic("process exit!!.\n");
 ffffffffc0204680:	00002617          	auipc	a2,0x2
 ffffffffc0204684:	5a060613          	addi	a2,a2,1440 # ffffffffc0206c20 <default_pmm_manager+0x1000>
-ffffffffc0204688:	18700593          	li	a1,391
+ffffffffc0204688:	18200593          	li	a1,386
 ffffffffc020468c:	00002517          	auipc	a0,0x2
 ffffffffc0204690:	5c450513          	addi	a0,a0,1476 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 {
@@ -8919,7 +8919,7 @@ ffffffffc020481c:	b725                	j	ffffffffc0204744 <proc_init+0xaa>
         panic("cannot alloc idleproc.\n");
 ffffffffc020481e:	00002617          	auipc	a2,0x2
 ffffffffc0204822:	4a260613          	addi	a2,a2,1186 # ffffffffc0206cc0 <default_pmm_manager+0x10a0>
-ffffffffc0204826:	1a200593          	li	a1,418
+ffffffffc0204826:	19d00593          	li	a1,413
 ffffffffc020482a:	00002517          	auipc	a0,0x2
 ffffffffc020482e:	42650513          	addi	a0,a0,1062 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 ffffffffc0204832:	c1ffb0ef          	jal	ra,ffffffffc0200450 <__panic>
@@ -8928,7 +8928,7 @@ ffffffffc0204836:	00002697          	auipc	a3,0x2
 ffffffffc020483a:	52268693          	addi	a3,a3,1314 # ffffffffc0206d58 <default_pmm_manager+0x1138>
 ffffffffc020483e:	00001617          	auipc	a2,0x1
 ffffffffc0204842:	04a60613          	addi	a2,a2,74 # ffffffffc0205888 <commands+0x870>
-ffffffffc0204846:	1c600593          	li	a1,454
+ffffffffc0204846:	1c100593          	li	a1,449
 ffffffffc020484a:	00002517          	auipc	a0,0x2
 ffffffffc020484e:	40650513          	addi	a0,a0,1030 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 ffffffffc0204852:	bfffb0ef          	jal	ra,ffffffffc0200450 <__panic>
@@ -8937,14 +8937,14 @@ ffffffffc0204856:	00002697          	auipc	a3,0x2
 ffffffffc020485a:	4da68693          	addi	a3,a3,1242 # ffffffffc0206d30 <default_pmm_manager+0x1110>
 ffffffffc020485e:	00001617          	auipc	a2,0x1
 ffffffffc0204862:	02a60613          	addi	a2,a2,42 # ffffffffc0205888 <commands+0x870>
-ffffffffc0204866:	1c500593          	li	a1,453
+ffffffffc0204866:	1c000593          	li	a1,448
 ffffffffc020486a:	00002517          	auipc	a0,0x2
 ffffffffc020486e:	3e650513          	addi	a0,a0,998 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 ffffffffc0204872:	bdffb0ef          	jal	ra,ffffffffc0200450 <__panic>
         panic("create init_main failed.\n");
 ffffffffc0204876:	00002617          	auipc	a2,0x2
 ffffffffc020487a:	49260613          	addi	a2,a2,1170 # ffffffffc0206d08 <default_pmm_manager+0x10e8>
-ffffffffc020487e:	1bf00593          	li	a1,447
+ffffffffc020487e:	1ba00593          	li	a1,442
 ffffffffc0204882:	00002517          	auipc	a0,0x2
 ffffffffc0204886:	3ce50513          	addi	a0,a0,974 # ffffffffc0206c50 <default_pmm_manager+0x1030>
 ffffffffc020488a:	bc7fb0ef          	jal	ra,ffffffffc0200450 <__panic>
@@ -9043,8 +9043,8 @@ ffffffffc0204914 <wakeup_proc>:
 #include <sched.h>
 #include <assert.h>
 
-void
-wakeup_proc(struct proc_struct *proc) {
+void wakeup_proc(struct proc_struct *proc)
+{
     assert(proc->state != PROC_ZOMBIE && proc->state != PROC_RUNNABLE);
 ffffffffc0204914:	411c                	lw	a5,0(a0)
 ffffffffc0204916:	4705                	li	a4,1
@@ -9054,7 +9054,7 @@ ffffffffc020491a:	00f77563          	bleu	a5,a4,ffffffffc0204924 <wakeup_proc+0x
 ffffffffc020491e:	4789                	li	a5,2
 ffffffffc0204920:	c11c                	sw	a5,0(a0)
 ffffffffc0204922:	8082                	ret
-wakeup_proc(struct proc_struct *proc) {
+{
 ffffffffc0204924:	1141                	addi	sp,sp,-16
     assert(proc->state != PROC_ZOMBIE && proc->state != PROC_RUNNABLE);
 ffffffffc0204926:	00002697          	auipc	a3,0x2
@@ -9064,7 +9064,7 @@ ffffffffc0204932:	f5a60613          	addi	a2,a2,-166 # ffffffffc0205888 <command
 ffffffffc0204936:	45a5                	li	a1,9
 ffffffffc0204938:	00002517          	auipc	a0,0x2
 ffffffffc020493c:	48850513          	addi	a0,a0,1160 # ffffffffc0206dc0 <default_pmm_manager+0x11a0>
-wakeup_proc(struct proc_struct *proc) {
+{
 ffffffffc0204940:	e406                	sd	ra,8(sp)
     assert(proc->state != PROC_ZOMBIE && proc->state != PROC_RUNNABLE);
 ffffffffc0204942:	b0ffb0ef          	jal	ra,ffffffffc0200450 <__panic>
@@ -9072,8 +9072,8 @@ ffffffffc0204942:	b0ffb0ef          	jal	ra,ffffffffc0200450 <__panic>
 ffffffffc0204946 <schedule>:
 }
 
-void
-schedule(void) {
+void schedule(void)
+{
 ffffffffc0204946:	1141                	addi	sp,sp,-16
 ffffffffc0204948:	e406                	sd	ra,8(sp)
 ffffffffc020494a:	e022                	sd	s0,0(sp)
@@ -9106,39 +9106,44 @@ ffffffffc020497c:	c7060613          	addi	a2,a2,-912 # ffffffffc02165e8 <proc_li
 ffffffffc0204980:	87b6                	mv	a5,a3
     struct proc_struct *next = NULL;
 ffffffffc0204982:	4581                	li	a1,0
-        do {
-            if ((le = list_next(le)) != &proc_list) {
+        do
+        {
+            if ((le = list_next(le)) != &proc_list)
+            {
                 next = le2proc(le, list_link);
-                if (next->state == PROC_RUNNABLE) {
+                if (next->state == PROC_RUNNABLE)
 ffffffffc0204984:	4809                	li	a6,2
     return listelm->next;
 ffffffffc0204986:	679c                	ld	a5,8(a5)
-            if ((le = list_next(le)) != &proc_list) {
+            if ((le = list_next(le)) != &proc_list)
 ffffffffc0204988:	00c78863          	beq	a5,a2,ffffffffc0204998 <schedule+0x52>
-                if (next->state == PROC_RUNNABLE) {
+                if (next->state == PROC_RUNNABLE)
 ffffffffc020498c:	f387a703          	lw	a4,-200(a5)
                 next = le2proc(le, list_link);
 ffffffffc0204990:	f3878593          	addi	a1,a5,-200
-                if (next->state == PROC_RUNNABLE) {
+                if (next->state == PROC_RUNNABLE)
 ffffffffc0204994:	01070463          	beq	a4,a6,ffffffffc020499c <schedule+0x56>
+                {
                     break;
                 }
             }
         } while (le != last);
 ffffffffc0204998:	fef697e3          	bne	a3,a5,ffffffffc0204986 <schedule+0x40>
-        if (next == NULL || next->state != PROC_RUNNABLE) {
+        if (next == NULL || next->state != PROC_RUNNABLE)
 ffffffffc020499c:	c589                	beqz	a1,ffffffffc02049a6 <schedule+0x60>
 ffffffffc020499e:	4198                	lw	a4,0(a1)
 ffffffffc02049a0:	4789                	li	a5,2
 ffffffffc02049a2:	00f70e63          	beq	a4,a5,ffffffffc02049be <schedule+0x78>
+        {
             next = idleproc;
         }
-        next->runs ++;
+        next->runs++;
 ffffffffc02049a6:	451c                	lw	a5,8(a0)
 ffffffffc02049a8:	2785                	addiw	a5,a5,1
 ffffffffc02049aa:	c51c                	sw	a5,8(a0)
-        if (next != current) {
+        if (next != current)
 ffffffffc02049ac:	00a88463          	beq	a7,a0,ffffffffc02049b4 <schedule+0x6e>
+        {
             proc_run(next);
 ffffffffc02049b0:	92bff0ef          	jal	ra,ffffffffc02042da <proc_run>
     if (flag) {
@@ -9151,7 +9156,7 @@ ffffffffc02049b6:	60a2                	ld	ra,8(sp)
 ffffffffc02049b8:	6402                	ld	s0,0(sp)
 ffffffffc02049ba:	0141                	addi	sp,sp,16
 ffffffffc02049bc:	8082                	ret
-        if (next == NULL || next->state != PROC_RUNNABLE) {
+        if (next == NULL || next->state != PROC_RUNNABLE)
 ffffffffc02049be:	852e                	mv	a0,a1
 ffffffffc02049c0:	b7dd                	j	ffffffffc02049a6 <schedule+0x60>
 }

@@ -1,6 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "assert.h": "c"
-    }
+        "assert.h": "c",
+        "syscall.h": "c"
+    },
+    "cmake.configureOnOpen": true
 }
