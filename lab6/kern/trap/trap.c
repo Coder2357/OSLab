@@ -148,7 +148,8 @@ void interrupt_handler(struct trapframe *tf) {
             // clear_csr(sip, SIP_STIP);
             clock_set_next_event();
             if (++ticks % TICK_NUM == 0 ) {
-                //print_ticks()
+                //print_ticks();
+                //current->need_resched = 1;
             }
             if (current){
                 sched_class_proc_tick(current); 

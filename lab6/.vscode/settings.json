@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compilerPath": "/home/jflanping/riscv64-unknown-elf-gcc-2018.07.0-x86_64-linux-ubuntu14/bin/riscv64-unknown-elf-gcc",
+    "files.associations": {
+        "default_sched.h": "c"
+    }
+}

@@ -1,0 +1,3 @@
+/home/jflanping/OSLab/lab8/build/CMakeFiles/lab8.dir
+/home/jflanping/OSLab/lab8/build/CMakeFiles/edit_cache.dir
+/home/jflanping/OSLab/lab8/build/CMakeFiles/rebuild_cache.dir
