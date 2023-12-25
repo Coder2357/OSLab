@@ -791,7 +791,6 @@ load_icode(int fd, int argc, char **kargv)
         end = ph->p_va + ph->p_memsz;
 
         if (start < la) {
-            /* ph->p_memsz == ph->p_filesz */
             if (start == end) {
                 continue ;
             }
@@ -845,7 +844,7 @@ load_icode(int fd, int argc, char **kargv)
     
     argv_size = 0;
     for (i = 0; i < argc; i ++) {
-        uargv[i] = strcpy((char *)(stacktop + argv_size ), kargv[i]);
+        uargv[i] = strcpy((char *)(stacktop + argv_size), kargv[i]);
         argv_size +=  strnlen(kargv[i],EXEC_MAX_ARG_LEN + 1)+1;
     }
     
